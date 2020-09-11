@@ -14,8 +14,8 @@ sid = login(ip, user, pw)
 
 #Add Host
 command = "add-host"
-hostname = raw_input("Enter host name: ")
-host_ip = raw_input("Enter host IP address: ")
+hostname = input("Enter host name: ")
+host_ip = input("Enter host IP address: ")
 
 json_data = {}
 json_data['name']=hostname
