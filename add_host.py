@@ -5,8 +5,8 @@ from login_logout import logout
 from login_logout import post
 
 #Gather variables from user
-ip = raw_input("Management Server Address: ")
-user = raw_input("Username: ")
+ip = input("Management Server Address: ")
+user = input("Username: ")
 pw = getpass.getpass('Password:')
 
 #Login
@@ -23,14 +23,14 @@ json_data['ip-address']=host_ip
 
 result = post(sid, ip, command, json_data)
 
-print result["name"] + " has successfully been created. Publishing now."
+print (result["name"] + " has successfully been created. Publishing now.")
 
 #Publish
 command = "publish"
 json_data = {}
 result = post(sid, ip, command, json_data)
 
-print result
+print (result)
 
 #Logout
 logout(sid, ip)

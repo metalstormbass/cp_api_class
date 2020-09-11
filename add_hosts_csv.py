@@ -6,8 +6,8 @@ from login_logout import logout
 from login_logout import post
 
 #Gather variables from user
-ip = raw_input("Management Server Address: ")
-user = raw_input("Username: ")
+ip = input("Management Server Address: ")
+user = input("Username: ")
 pw = getpass.getpass('Password:')
 
 #Login
@@ -17,14 +17,14 @@ sid = login(ip, user, pw)
 selection = raw_input("1. Add host \n2. Delete host\nSelection: ")
 if selection == "1":
     command = "add-host"
-    print "Add host selected"
+    print ("Add host selected")
 elif selection == "2":
         command = "delete-host"
-        print "Delete host selected"
+        print ("Delete host selected")
 else:  
-        print "Please enter number 1 or 2"
+        print ("Please enter number 1 or 2")
     
-path = raw_input("Enter the file you wish to import. Use forward slashes, even on Windows: ")
+path = input("Enter the file you wish to import. Use forward slashes, even on Windows: ")
 
 csv_file = path
 with open(path) as csv_file:
@@ -42,15 +42,15 @@ with open(path) as csv_file:
         
         #Create hosts and print result.
         result = post(sid, ip, command, json_data)
-        print result
+        print (result)
         
 #Publish
-print "Publishing..."
+print ("Publishing...")
 command = "publish"
 json_data = {}
 result = post(sid, ip, command, json_data)
 
-print result
+print (result)
 
 #Logout
 logout(sid, ip)

@@ -24,8 +24,8 @@ def login(ip,user,pw):
         return sid
     
     except Exception as error:
-        print "Unable to login. Ensure the API is enabled and check credentials"
-        print error
+        print ("Unable to login. Ensure the API is enabled and check credentials")
+        print (error)
         sys.exit()
         
 
@@ -42,7 +42,7 @@ def post(sid, ip, command, json_data):
         
         return response_json
     except:
-        print "Error Occured"
+        print ("Error Occured")
         sys.exit()
         
 #Logout function
